@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "servicios")
@@ -23,7 +24,7 @@ public class Servicio implements Serializable {
     private String descripcion;
 
     @Column(name = "precio", precision = 10, scale = 2)
-    private Double precio;
+    private BigDecimal precio;
 
     @ManyToOne
     @JoinColumn(name = "id_tipo_servicio", nullable = false)
